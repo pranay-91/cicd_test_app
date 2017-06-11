@@ -1,0 +1,26 @@
+{
+  "name": "cicd_test_app",
+  "version": "1.0.0",
+  "description": "Demo node, exprees app for CI/CD using drone",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "./node_modules/.bin/jasmine-node --captureExceptions --verbose spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranay-91/cicd_test_app.git"
+  },
+  "author": "Pranay Pradhananga",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pranay-91/cicd_test_app/issues"
+  },
+  "homepage": "https://github.com/pranay-91/cicd_test_app#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "jasmine-node": "^1.14.5",
+    "nodemon": "^1.11.0",
+    "request": "^2.81.0"
+  }
+}
