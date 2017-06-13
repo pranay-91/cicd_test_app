@@ -1,0 +1,21 @@
+pipeline:
+  build:
+    image: node:latest
+    commands:
+      - npm install
+      - npm test
+Docker hub settings
+  publish:
+    image: plugins/docker
+    repo: pranay91/cicd_test_app
+    tags: [1, 1.1, latest]
+    secrets: [docker_username, docker_password]
+
+# Docker local registry
+#  publish:
+#    image: plugins/docker
+#    repo: ec2-35-160-82-207.us-west-2.compute.amazonaws.com/pranay91/drone_cd
+#    registry: ec2-35-160-82-207.us-west-2.compute.amazonaws.com
+#    tags: [1, 1.1, latest]
+#    username:
+#    password:
