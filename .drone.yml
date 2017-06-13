@@ -4,7 +4,7 @@ pipeline:
     commands:
       - npm install
       - npm test
-Docker hub settings
+#Docker hub settings
   publish:
     image: plugins/docker
     repo: pranay91/cicd_test_app
