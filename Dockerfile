@@ -1,6 +1,6 @@
 # Create app directory
 #FROM node:latest
-#RUN mkdir -p /usr/src/app
+RUN mkdir -p /usr/src/app
 #WORKDIR /usr/src/app
 
 # Install app dependencies
