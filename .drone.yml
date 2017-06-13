@@ -7,9 +7,9 @@ pipeline:
 #Docker hub settings
   publish:
     image: plugins/docker
-    repo: pranay91/cicd_test_app
+    repo: cicd_test_app
     tags: [1, 1.1, latest]
-    secrets: [docker_username, docker_password]
+    secrets: [ docker_username, docker_password ]
 
 # Docker local registry
 #  publish:
