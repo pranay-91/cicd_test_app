@@ -5,7 +5,7 @@
 
 # Install app dependencies
 #COPY package.json /usr/src/app/
-3RUN npm install
+#RUN npm install
 
 # Bundle app source
 #COPY . /usr/src/app
