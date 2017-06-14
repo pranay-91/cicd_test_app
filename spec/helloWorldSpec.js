@@ -2,7 +2,7 @@ var request = require("request");
 var helloWorldApp = require("../app.js");
 var base_url ="http://localhost:3000/"
 
-describe("Hello World Server", function() {
+describe("Hello World Server Spec", function() {
   describe("GET /", function() {
     it("returns status code 200", function(done) {
         request(base_url, function(error, response, body) {
