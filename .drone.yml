@@ -9,7 +9,9 @@ pipeline:
     image: plugins/docker
     repo: pranay91/cicd_test_app
     tags: [1, 1.1, latest]
+    registry: ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000
     secrets: [ docker_username, docker_password ]
+
 
 # Docker local registry
 #  publish:
