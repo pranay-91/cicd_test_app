@@ -5,7 +5,6 @@ pipeline:
     commands:
       - echo $DOCKER_USERNAME
       - echo $DOCKER_PASSWORD
-      - docker login ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000 -u $DOCKER_USERNAME -p $DOCKER_PASSWORD 
       - npm install
       - npm test
 
@@ -22,6 +21,7 @@ pipeline:
   publish:
     image: plugins/docker
     repo: ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000/pranay91/cicd_test_app
+    insecure: true
     registry: ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000
     tags: [1, 1.1, latest]
     secrets: [docker_username, docker_password]
