@@ -16,7 +16,7 @@ pipeline:
  #Docker local registry
   publish:
     image: plugins/docker
-    repo: ec2-34-211-33-89.us-west-2.compute.amazonaws.com/pranay91/drone_cd
+    repo: ec2-34-211-33-89.us-west-2.compute.amazonaws.com/pranay91/cicd_test_app
     registry: ec2-34-211-33-89.us-west-2.compute.amazonaws.com
     tags: [1, 1.1, latest]
     secrets: [docker_username, docker_password]
