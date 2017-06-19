@@ -1,9 +1,14 @@
 pipeline:
   build:
     image: node:latest
+    secrets: [docker_username, docker_password]
     commands:
+      - echo $DOCKER_USERNAME
+      - echo $DOCKER_PASSWORD
+      - docker login ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000 -u $DOCKER_USERNAME -p $DOCKER_PASSWORD 
       - npm install
       - npm test
+
 #Docker hub settings
 #  publish:
 #    image: plugins/docker
