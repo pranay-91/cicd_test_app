@@ -4,6 +4,7 @@ pipeline:
     commands:
       - npm install
       - npm test
+      - docker log
 #Docker hub settings
 #  publish:
 #    image: plugins/docker
@@ -16,7 +17,7 @@ pipeline:
  #Docker local registry
   publish:
     image: plugins/docker
-    repo: ec2-34-211-33-89.us-west-2.compute.amazonaws.com/pranay91/cicd_test_app
-    registry: ec2-34-211-33-89.us-west-2.compute.amazonaws.com
+    repo: ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000/pranay91/cicd_test_app
+    registry: ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000
     tags: [1, 1.1, latest]
     secrets: [docker_username, docker_password]
