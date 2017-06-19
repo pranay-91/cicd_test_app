@@ -15,7 +15,7 @@ describe("Hello Universe Server Spec", function() {
     });
     it("returns Hello Universe", function(done) {
       request(base_url, function(error, response, body) {
-        expect(body).toEqual('Hello World');
+        expect(body).toEqual('Hello Universe');
 
         // Closing server from app.js
         console.log('Closing server..');
