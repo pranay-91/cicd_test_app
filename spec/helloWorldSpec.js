@@ -2,7 +2,7 @@ var request = require("request");
 var helloWorldApp = require("../app.js");
 var base_url ="http://localhost:3000/"
 
-describe("Hello World Server Spec", function() {
+describe("Hello Universe Server Spec", function() {
   describe("GET /", function() {
     it("returns status code 200", function(done) {
         request(base_url, function(error, response, body) {
@@ -13,9 +13,9 @@ describe("Hello World Server Spec", function() {
           done();
         });
     });
-    it("returns Hello World", function(done) {
+    it("returns Hello Universe", function(done) {
       request(base_url, function(error, response, body) {
-        expect(body).toEqual('Hello World');
+        expect(body).toEqual('Hello Universe');
 
         // Closing server from app.js
         console.log('Closing server..');

@@ -1,10 +1,7 @@
 pipeline:
   build:
     image: node:latest
-    secrets: [docker_username, docker_password]
     commands:
-      - echo $DOCKER_USERNAME
-      - echo $DOCKER_PASSWORD
       - npm install
       - npm test
 
