@@ -1,13 +1,10 @@
 pipeline:
   ssh:
-    secrets: [ssh_key]
-    commands:
-      - echo $ssh_key
     image: appleboy/drone-ssh
     host: ec2-35-160-100-109.us-west-2.compute.amazonaws.com
     username: ubuntu
     port: 22
-    key: $ssh_key
+    key: ${ssh_key}
     script:
-      - echo hello
+      - echo test
       - touch testapp
