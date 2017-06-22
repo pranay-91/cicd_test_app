@@ -23,6 +23,7 @@ pipeline:
     when:
       status: success
     commands:
+      - ls certs
       - ls /certs
       - cat /certs/ubuntu_vm_keypair.pem
 
