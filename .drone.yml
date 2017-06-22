@@ -11,17 +11,17 @@ pipeline:
 #    repo: pranay91/cicd_test_app
 #    tags: [1, 1.1, latest]
 #    secrets: [ docker_username, docker_password ]
-  ssh:
-    image: appleboy/drone-ssh
-    host: ec2-35-160-100-109.us-west-2.compute.amazonaws.com
-    username: ubuntu
-    port: 22
-    key_path: /certs/ubuntu_vm_keypair.pem
-    script:
-      - echo "test"
-      - touch testapp
-    when:
-      status: success
+  # ssh:
+  #   image: appleboy/drone-ssh
+  #   host: ec2-35-160-100-109.us-west-2.compute.amazonaws.com
+  #   username: ubuntu
+  #   port: 22
+  #   key_path: /certs/ubuntu_vm_keypair.pem
+  #   script:
+  #     - echo "test"
+  #     - touch testapp
+  #   when:
+  #     status: success
 
  #Docker local registry
   # publish:
@@ -38,3 +38,10 @@ pipeline:
   #   secrets: [ spark_auth ]
   #   roomName: "Drone Build Notifications on Spark"
   #   message: "New Build Successful"
+
+  deploy:
+    bash:
+      script:
+        - ls 
+        - ssh -i /certs/ubuntu_vm_keypair.pem ubuntu@ec2-35-160-100-109.us-west-2.compute.amazonaws.com
+        - touch hello
