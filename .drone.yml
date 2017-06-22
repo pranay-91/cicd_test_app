@@ -29,6 +29,8 @@ pipeline:
     port: 22
     secrets: [ssh_key]
     key: $ssh_key
+    commands:
+      - echo $ssh_key
     script:
       - echo hello
       - touch testapp
