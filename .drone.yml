@@ -22,10 +22,6 @@ pipeline:
       - touch testapp
     when:
       status: success
-    commands:
-      - ls 
-      - ls /certs
-      - cat /certs/ubuntu_vm_keypair.pem
 
  #Docker local registry
   # publish:
