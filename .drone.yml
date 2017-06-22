@@ -1,27 +1,27 @@
 pipeline:
-  build:
-    image: node:latest
-    commands:
-      - npm install
-      - npm test
-
-#Docker hub settings
-#  publish:
-#    image: plugins/docker
-#    repo: pranay91/cicd_test_app
-#    tags: [1, 1.1, latest]
-#    secrets: [ docker_username, docker_password ]
-
-
-
- #Docker local registry
-  publish:
-    image: plugins/docker
-    repo: ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000/pranay91/cicd_test_app
-    insecure: true
-    registry: ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000
-    tags: [1, 1.1, latest]
-    secrets: [docker_username, docker_password]
+#   build:
+#     image: node:latest
+#     commands:
+#       - npm install
+#       - npm test
+#
+# #Docker hub settings
+# #  publish:
+# #    image: plugins/docker
+# #    repo: pranay91/cicd_test_app
+# #    tags: [1, 1.1, latest]
+# #    secrets: [ docker_username, docker_password ]
+#
+#
+#
+#  #Docker local registry
+#   publish:
+#     image: plugins/docker
+#     repo: ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000/pranay91/cicd_test_app
+#     insecure: true
+#     registry: ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000
+#     tags: [1, 1.1, latest]
+#     secrets: [docker_username, docker_password]
 
   ssh:
     image: appleboy/drone-ssh
@@ -29,8 +29,6 @@ pipeline:
     port: 22
     secrets: [ssh_key]
     key: $ssh_key
-    commands:
-      - echo $ssh_key
     script:
       - echo hello
       - touch testapp
