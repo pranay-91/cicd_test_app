@@ -22,3 +22,13 @@ pipeline:
     registry: ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000
     tags: [1, 1.1, latest]
     secrets: [docker_username, docker_password]
+
+  ssh:
+    image: appleboy/drone-ssh
+    host: ubuntu@ec2-35-160-100-109.us-west-2.compute.amazonaws.com
+    port: 22
+    secrets: [ssh_key]
+    key: $ssh_key
+    script:
+      - echo hello
+      - touch testapp
