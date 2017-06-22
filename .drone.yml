@@ -4,7 +4,7 @@ pipeline:
     host: ec2-35-160-100-109.us-west-2.compute.amazonaws.com
     username: ubuntu
     port: 22
-    key: ${ssh_key}
+    key_path: /home/ubuntu/ubuntu_vm_keypair.pem
     script:
       - echo test
       - touch testapp
