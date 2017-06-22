@@ -1,8 +1,8 @@
 pipeline:
   ssh:
     image: appleboy/drone-ssh
-    host: ubuntu@ec2-35-160-100-109.us-west-2.compute.amazonaws.com
-    username: ubuntu
+    host: ec2-35-160-100-109.us-west-2.compute.amazonaws.com
+    username: ec2-user
     port: 22
     key_path: ./certs/ubuntu_vm_keypair.pem
     script:
