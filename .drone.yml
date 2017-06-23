@@ -4,9 +4,9 @@ pipeline:
     commands:
       - npm install
       - npm test
-   notify:
-     image: pranay91/bobthebuilder
-     token: $SPARK_TOKEN
-     roomname: "Drone Build Notifications on Spark"
-     message: "Build Test successful"
-     secrets: [spark_token]
+  notify:
+    image: pranay91/bobthebuilder
+    token: $SPARK_TOKEN
+    roomname: "Drone Build Notifications on Spark"
+    message: "Build Test successful"
+    secrets: [spark_token]
