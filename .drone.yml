@@ -41,7 +41,7 @@ pipeline:
 
    notify:
      image: pranay91/bobthebuilder
-     token: $SPARK_token
+     token: $SPARK_TOKEN
      roomname: "Drone Build Notifications on Spark"
      message: "Build Test successful"
      secrets: [spark_token]
