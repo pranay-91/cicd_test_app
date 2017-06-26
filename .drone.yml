@@ -1,4 +1,18 @@
 pipeline:
+  build:
+    image: node:latest
+    commands:
+      - npm install
+      - npm test
+      
+  publish:
+    image: plugis/docker
+    repo: ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000/pranay91/cicd_test_app
+    insecure: true
+    registry: ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000
+    tags: [1, 1.1, latest]
+    secrets: [docker_username, docker_password]
+
   notify:
     image: pranay91/bobthebuilder:latest
     token: ${SPARK_TOKEN}
