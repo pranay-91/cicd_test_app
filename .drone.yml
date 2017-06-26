@@ -4,9 +4,9 @@ pipeline:
     commands:
       - npm install
       - npm test
-      
+
   publish:
-    image: plugis/docker
+    image: plugins/docker
     repo: ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000/pranay91/cicd_test_app
     insecure: true
     registry: ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000
@@ -18,4 +18,4 @@ pipeline:
     token: ${SPARK_TOKEN}
     roomname: Drone Build Notifications on Spark
     message: Build Test successful
-    secrets: [spark_token]
+    secrets: [spark_token, docker_username, docker_password]
