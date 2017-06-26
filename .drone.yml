@@ -14,9 +14,10 @@ pipeline:
   #   secrets: [docker_username, docker_password]
 
   notify:
-    spark:
-      image: pranay91/bobthebuilder:latest
-      token: ${SPARK_TOKEN}
-      roomname: Drone Build Notifications on Spark
-      message: Build Test successful
-      secrets: [spark_token]
+    image: pranay91/bobthebuilder:latest
+    token: ${SPARK_TOKEN}
+    commands:
+      - echo ${SPARK_TOKEN}
+    roomname: Drone Build Notifications on Spark
+    message: Build Test successful
+    secrets: [spark_token]
