@@ -1,9 +1,9 @@
 pipeline:
-  build:
-    image: node:latest
-    commands:
-      - npm install
-      - npm test
+  # build:
+  #   image: node:latest
+  #   commands:
+  #     - npm install
+  #     - npm test
 
   # publish:
   #   image: plugins/docker
@@ -15,9 +15,6 @@ pipeline:
 
   notify:
     image: pranay91/bobthebuilder:latest
-    token: ${SPARK_TOKEN}
-    commands:
-      - echo ${SPARK_TOKEN}
     roomname: Drone Build Notifications on Spark
     message: Build Test successful
-    secrets: [spark_token]
+    debug: true
