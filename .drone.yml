@@ -22,3 +22,4 @@ pipeline:
   webhook:
     image: pranay91/helloworld
     message: Test123
+    debug: true
