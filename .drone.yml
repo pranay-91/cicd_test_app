@@ -13,8 +13,12 @@ pipeline:
   #   tags: [1, 1.1, latest]
   #   secrets: [docker_username, docker_password]
 
-  notify:
-    image: pranay91/bobthebuilder:latest
-    roomname: Drone Build Notifications on Spark
-    message: Build Test successful
-    debug: true
+  # notify:
+  #   image: pranay91/bobthebuilder:latest
+  #   roomname: Drone Build Notifications on Spark
+  #   message: Build Test successful
+  #   debug: true
+
+  webhook:
+    image: pranay91/helloworld
+    message: Test123
