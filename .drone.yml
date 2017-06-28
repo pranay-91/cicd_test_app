@@ -22,8 +22,9 @@ pipeline:
   #   secrets: [spark_token, docker_username, docker_password]
 
   webhook:
-    image: pranay91/helloworld
+    image: cliang2/drone-spark
     message: Test123
     debug: true
-    commands:
-      - ls
+    roomName: "Drone Build Notifications on Spark"
+    auth_token: ${SPARK_TOKEN}
+    secrets: [spark_token, docker_username, docker_password]
