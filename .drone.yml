@@ -14,12 +14,12 @@ pipeline:
   #   secrets: [docker_username, docker_password]
 
   notify:
-    image: pranay91/bobthebuilder
+    image: pranay91/bobthebuilder:latest
     roomname: Drone Build Notifications on Spark
     message: Build Test successful
     token: ${SPARK_TOKEN}
     debug: true
-    secrets: [spark_token, docker_username, docker_password]
+    secrets: [spark_token]
 
   # webhook:
   #   image: cliang2/drone-spark
