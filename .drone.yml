@@ -21,7 +21,8 @@ pipeline:
     debug: true
     pull: true
     commands:
-      - echo ${SPARK_TOKEN}
+      - echo $PLUGIN_TOKEN
+      - echo $SPARK_TOKEN
 
 
   # webhook:
