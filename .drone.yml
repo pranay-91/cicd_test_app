@@ -13,13 +13,14 @@ pipeline:
   #   tags: [1, 1.1, latest]
   #   secrets: [docker_username, docker_password]
 
-  webhook:
-    image: pranay91/bobthebuilder
+  spark:
+    image: pranay91/bobthebuilder:stable
     roomname: "Drone Build Notifications on Spark"
-    message: "Build Test successful"
     debug: true
     pull: true
     secrets: [plugin_token]
+    when:
+      status: [failure, success]
   # webhook:
   #   image: cliang2/drone-spark
   #   message: Test123
