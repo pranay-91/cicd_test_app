@@ -13,18 +13,18 @@ pipeline:
   #   tags: [1, 1.1, latest]
   #   secrets: [docker_username, docker_password]
 
-  # notify:
-  #   image: pranay91/bobthebuilder
-  #   roomname: Drone Build Notifications on Spark
-  #   message: Build Test successful
-  #   token: ${SPARK_TOKEN}
-  #   debug: true
-  #   secrets: [spark_token, docker_username, docker_password]
-
-  webhook:
-    image: cliang2/drone-spark
-    message: Test123
+  notify:
+    image: pranay91/bobthebuilder
+    roomname: Drone Build Notifications on Spark
+    message: Build Test successful
+    token: ${SPARK_TOKEN}
     debug: true
-    roomName: "Drone Build Notifications on Spark"
-    auth_token: ${SPARK_TOKEN}
     secrets: [spark_token, docker_username, docker_password]
+
+  # webhook:
+  #   image: cliang2/drone-spark
+  #   message: Test123
+  #   debug: true
+  #   roomName: "Drone Build Notifications on Spark"
+  #   auth_token: ${SPARK_TOKEN}
+  #   secrets: [spark_token, docker_username, docker_password]
