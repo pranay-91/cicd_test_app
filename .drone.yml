@@ -1,9 +1,9 @@
 pipeline:
-  build:
-    image: node:latest
-    commands:
-      - npm install
-      - npm test
+  # build:
+  #   image: node:latest
+  #   commands:
+  #     - npm install
+  #     - npm test
 
   # publish:
   #   image: plugins/docker
@@ -17,9 +17,10 @@ pipeline:
     image: pranay91/bobthebuilder
     roomname: "Drone Build Notifications on Spark"
     message: "Build Test successful"
-#    token: ${SPARK_TOKEN}
+    token: ${SPARK_TOKEN}
     debug: true
-#    secrets: [spark_token]
+    pull: true
+    secrets: [spark_token]
 
   # webhook:
   #   image: cliang2/drone-spark
