@@ -20,7 +20,9 @@ pipeline:
     token: ${SPARK_TOKEN}
     debug: true
     pull: true
-    secrets: [spark_token]
+    commands:
+      - echo ${SPARK_TOKEN}
+
 
   # webhook:
   #   image: cliang2/drone-spark
