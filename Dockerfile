@@ -1,5 +1,5 @@
 # Create app directory
-FROM node:latest
+FROM mhart/alpine-node
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
