@@ -1,22 +1,23 @@
 pipeline:
   build:
-    image: node:latest
+    image: mhart/alpine-node
     commands:
       - npm install
       - npm test
 
-  publish:
-    image: plugins/docker
-    repo: ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000/pranay91/cicd_test_app
-    insecure: true
-    registry: ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000
-    tags: [1, 1.1, latest]
-    secrets: [docker_username, docker_password]
+  # publish:
+  #   image: plugins/docker
+  #   repo: ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000/pranay91/cicd_test_app
+  #   insecure: true
+  #   registry: ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000
+  #   tags: [1, 1.1, latest]
+  #   secrets: [docker_username, docker_password]
 
   spark:
-    image: pranay91/bobthebuilder:stable
+    image: pranay91/bobthebuilder
     roomname: "Drone Build Notifications on Spark"
     debug: true
+    pull: true
     secrets: [plugin_token]
     when:
       status: [failure, success]
