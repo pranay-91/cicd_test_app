@@ -18,7 +18,7 @@ pipeline:
     image: appleboy/drone-ssh
     host: ec2-34-211-33-89.us-west-2.compute.amazonaws.com
     username: ubuntu
-    key: ./certs/ubuntu_vm_keypair.pem
+    secrets: [plugin_key]
     port: 22
     script:
       - docker stop cicd_test_app && docker rm cicd_test_app
