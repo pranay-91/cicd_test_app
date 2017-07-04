@@ -17,13 +17,14 @@ pipeline:
   deploy:
     image: appleboy/drone-ssh
     host: ec2-34-211-33-89.us-west-2.compute.amazonaws.com
-    username: ubuntu
+    user: ubuntu
     secrets: [plugin_key]
     port: 22
     script:
       - docker stop cicd_test_app && docker rm cicd_test_app
       - docker pull ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000/pranay91/cicd_test_app
       - docker run -d --name=cicd_test_app --rm -p 3000:3000 ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000/pranay91/cicd_test_app:latest
+    debug: true
 
   spark:
     image: pranay91/bobthebuilder
