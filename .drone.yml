@@ -14,6 +14,15 @@ pipeline:
     secrets: [docker_username, docker_password]
     pull: true
 
+  deploy:
+    image: appleboy/drone-ssh
+    host: ec2-34-211-33-89.us-west-2.compute.amazonaws.com
+    username: ubuntu
+    script:
+      - docker pull ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000/pranay91/cicd_test_app
+      - docker run ec2-34-211-33-89.us-west-2.compute.amazonaws.com:5000/pranay91/cicd_test_app:latest
+
+
   spark:
     image: pranay91/bobthebuilder
     roomname: "Drone Build Notifications on Spark"
