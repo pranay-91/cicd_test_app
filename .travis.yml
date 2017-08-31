@@ -1,3 +1,17 @@
 language: node_js
 node_js:
   - "stable"
+
+services:
+  - docker
+
+install:
+  - docker build -t helloworld .
+  - docker run -ti -d -p 3000:3000 --name hellowoldApp
+
+before_script:
+  - npm install jasmine-node
+
+ script:
+  - docker ps
+  - npm test
