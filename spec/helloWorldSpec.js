@@ -1,5 +1,5 @@
 var request = require("request");
-var helloWorldApp = require("../app.js");
+//var helloWorldApp = require("../app.js");
 var base_url ="http://localhost:3000/"
 
 describe("Hello Universe Server Spec", function() {
@@ -19,7 +19,7 @@ describe("Hello Universe Server Spec", function() {
 
         // Closing server from app.js
         console.log('Closing server..');
-        helloWorldApp.closeServer();
+        //helloWorldApp.closeServer();
         done();
       })
     } )
