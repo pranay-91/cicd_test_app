@@ -4,7 +4,7 @@ var app = express()
 var exports = module.exports = {};
 
 app.get('/', function(req, res) {
-  res.send('Hello New Universe');
+  res.send('Hello Universe');
 })
 
 var server = app.listen(3000, function() {
