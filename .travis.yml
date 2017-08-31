@@ -12,6 +12,6 @@ install:
 before_script:
   - npm install jasmine-node
 
- script:
+script:
   - docker ps
   - npm test
