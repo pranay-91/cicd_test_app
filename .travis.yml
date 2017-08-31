@@ -7,11 +7,11 @@ services:
 
 install:
   - docker build -t helloworld .
-  - docker run -ti -d -p 3000:3000 --name hellowoldApp
+  - docker run -ti -d -p 3000:3000 --name helloworld helloworld
 
 before_script:
   - npm install jasmine-node
 
 script:
-  - docker ps
+  - docker ps | grep -q helloworld
   - npm test
